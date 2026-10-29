@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhinav Karthik Kambala - Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Lato', 'Segoe UI', Arial, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.25;
+    color: #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 210mm; margin: 0 auto; padding: 10mm 15mm 9mm; }
+
+  a { color: #1f4e99; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .name { text-align: center; font-weight: 700; font-size: 16.3pt; line-height: 1.15; letter-spacing: 0.1pt; color: #111; }
+  .contact { text-align: center; color: #444; font-size: 8.6pt; line-height: 1.45; margin-top: 1.5pt; }
+  .sep { margin: 0 4pt; }
+
+  h2 {
+    font-size: 9.3pt; font-weight: 700; text-transform: uppercase;
+    border-bottom: 0.9pt solid #111; padding-bottom: 0.5pt;
+    margin: 4.5pt 0 2.5pt;
+  }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .row .date { white-space: nowrap; padding-left: 12pt; }
+  .sub { font-style: italic; color: #555; }
+  .entry { margin-top: 3pt; }
+  .entry:first-of-type { margin-top: 0; }
+
+  ul { list-style: none; }
+  li { position: relative; padding-left: 12pt; text-align: justify; }
+  li::before { content: "\2022"; position: absolute; left: 2pt; }
+
+  @media (max-width: 600px) {
+    .page { padding: 16px; }
+    body { font-size: 9pt; }
+    .name { font-size: 14pt; }
+    .row { flex-direction: column; gap: 0; }
+    .row .date { padding-left: 0; font-size: 8pt; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="name">ABHINAV KARTHIK KAMBALA</div>
+  <div class="contact">
+    Hyderabad, India<span class="sep">|</span>+91 6305945664<span class="sep">|</span>GitHub: <a href="https://github.com/AbhinavKambala">github.com/AbhinavKambala</a><br>
+    <a href="mailto:k.abhinavkarthik@gmail.com">k.abhinavkarthik@gmail.com</a><span class="sep">|</span><a href="mailto:se23ucse010@mahindrauniversity.edu.in">se23ucse010@mahindrauniversity.edu.in</a>
+  </div>
+
+  <h2>Education</h2>
+  <div class="row"><span><b>Mahindra University, Hyderabad</b></span><span class="date">Aug 2023 – 2027</span></div>
+  <div>Bachelor of Technology in Computer Science</div>
+
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="row"><span><b>Applied AI Engineer Intern</b> — Protofine.AI (Proto Fine Pvt Ltd), T-Hub, Hyderabad</span><span class="date">Jul 2026 – Present</span></div>
+    <ul>
+      <li>Building applied AI features for COS (Cognitive Operating System), an external validation layer that catches hallucinations, fabricated citations, and false certainty in LLM outputs before they reach production users.</li>
+      <li>Implemented multi-model consensus verification — multiple independent LLMs cross-check each output and disagreements are flagged as likely hallucinations — reducing undetected fabrication in the validation pipeline.</li>
+      <li>Built LLM-as-a-judge evaluations scoring outputs against rubrics for factual accuracy, citation validity, and unwarranted certainty; built RAG pipelines with hybrid retrieval (BM25 + vector search) and PII redaction layers to keep sensitive data out of the LLM context window.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="row"><span><b>Soda Station</b> — Beverage Distribution Operations Platform</span><span class="date">Jun 2025 – Present</span></div>
+    <div class="sub">Founder &amp; Full-Stack Developer<span class="sep">|</span>React (Vite), Supabase (PostgreSQL, Edge Functions, RLS), Tailwind CSS, PWA</div>
+    <ul>
+      <li>Built and run a production platform serving a live beverage distribution business — 8 role-based portals (crew, manager, admin, shop owner, money collection, bank reconciliation, audit log, AI insights) that eliminated all paper-based tracking.</li>
+      <li>Engineered a 4-stage approval pipeline (dispatch → receipt → manager → admin) with automated bank reconciliation that matches uploaded statements (Excel/CSV) against approved payments to surface mismatches, and a tamper-proof audit log capturing every mutation across all tables.</li>
+      <li>Built an AI insights portal (Edge Functions + Gemini) where the business owner queries live financial data in natural language, powered by a RAG pipeline with hybrid retrieval (BM25 + vector similarity) over indexed business records and PII redaction to keep customer data out of the LLM.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div><b>HybridMind</b> — Personal AI Agent &amp; Telegram Bot</div>
+    <div class="sub">Independent Project<span class="sep">|</span>Python, PostgreSQL (pgvector), Groq API, Google Gemini API, Docker</div>
+    <ul>
+      <li>Built a multi-model AI agent with a ReAct (Reason+Act) loop, 8 tool integrations (web/news search, code execution, file I/O, server monitoring, vector memory CRUD), and persistent long-term memory via fastembed embeddings + pgvector similarity search.</li>
+      <li>Engineered a multi-provider LLM layer (Groq + Gemini) with automatic cross-provider fallback, message sanitization, and a complexity-based router that directs simple queries to a 20B model and complex tasks to Gemini Flash — achieving 93% routing accuracy and 18% latency reduction across a 30-task evaluation suite.</li>
+      <li>Built a RAG-powered gamification engine that retrieves stored user memories to generate personalized daily quests via LLM, with XP, leveling, and stat progression — deployed as a Telegram bot on a self-hosted Docker + Portainer stack.</li>
+    </ul>
+  </div>
+
+  <h2>Freelance</h2>
+  <div class="entry">
+    <div class="row"><span><b>Artsy Events</b> — Event &amp; Ticketing Website (<a href="https://www.artsyevents.in/">artsyevents.in</a>)<span class="sep">|</span>Client Project, Hyderabad</span><span class="date">2026</span></div>
+    <div class="sub">HTML, CSS, JavaScript, Vercel</div>
+    <ul>
+      <li>Built and launched a zero-dependency vanilla JS site for a 7,000-capacity venue's festival, with technical SEO (JSON-LD, Open Graph), ticketing deep-links to BookMyShow/AllEvents, and Vercel edge CDN deployment.</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <div><b>Languages:</b> Python, JavaScript, Java, SQL, C</div>
+  <div><b>Frontend:</b> React, Next.js, Vite, HTML, CSS, Recharts, PWA, Technical SEO</div>
+  <div><b>Backend &amp; Databases:</b> Node.js, Supabase, PostgreSQL, pgvector</div>
+  <div><b>AI &amp; LLMs:</b> Generative AI, RAG, Hybrid Search (BM25 + Vector), LLM-as-a-Judge, Multi-Model Consensus, Multi-Model Routing, PII Redaction</div>
+  <div><b>AI APIs:</b> Google Gemini, Groq, Google Speech-to-Text, Google Cloud Vision</div>
+  <div><b>Tools &amp; Platforms:</b> Git, GitHub, Docker, Portainer, Vercel</div>
+
+  <h2>Achievements &amp; Certifications</h2>
+  <ul>
+    <li>1st Place — Student of the Year, Google Gemini Hackathon</li>
+    <li>91 Percentile — JEE Main</li>
+    <li>Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</li>
+  </ul>
+
+  <h2>Interests</h2>
+  <div>AI &amp; Emerging Technologies<span class="sep">|</span>Software Product Development<span class="sep">|</span>Cricket<span class="sep">|</span>Day Trading</div>
+
+</div>
+</body>
+</html>
